@@ -1,0 +1,11 @@
+<div class="heatmap__container">
+    <div class="heatmap__row" [ngClass]="{'heatmap__row--last': last}" *ngFor="let row of source; let last = last;">
+        <div class="heatmap__column" *ngFor="let item of row;">
+            <div class="row-label" *ngIf="item.row"> {{ item.value }}</div>
+            <app-heatmap-item *ngIf="item.sourceData" [value]="item.value" [bgColor]="item.bgColor"
+                [fontColor]="item.fontColor"></app-heatmap-item>
+            <div class="col-label" *ngIf="item.col">{{ item.value }}</div>
+        </div>
+    </div>
+    <span class="heatmap__title">{{ title }}</span>
+</div>

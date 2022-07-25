@@ -1,0 +1,10 @@
+<div style="text-align:center">
+    <h1>
+        HeatMap Component!
+    </h1>
+</div>
+<div class="app__container" *ngIf="(mockdata.getMockData1() | async) as source">
+    <app-heatmap [colLabels]="source.columnLabels" [rowLabels]="source.rowLabels" [data]="source.data"
+        [title]="source.title">
+    </app-heatmap>
+</div>
